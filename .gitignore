@@ -1,0 +1,4 @@
+menu/__pycache__/
+testtaskuptrader/__pycache__/
+menu/templatetags/__pycache__
+*.sqlite3

@@ -1,0 +1,20 @@
+{% load menu_tags %}
+
+<li>
+    {{ menu_item.name }}
+    {% if children %}
+        <ul {% if first_child_expanded %}style="display: block;"{% else %}style="display: none;"{% endif %}>
+            {% for child in children %}
+                {% if not forloop.first %}
+                    <li {% if not other_children_expanded %}style="display: none;"{% endif %}>
+                        {{ child.name }}
+                    </li>
+                {% else %}
+                    <li>
+                        {{ child.name }}
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    {% endif %}
+</li>
